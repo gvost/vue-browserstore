@@ -15,7 +15,7 @@
         delimiters: ['${', '}'],
         data: { value: 0 },
         mounted: function () {
-          console.log(this.$session()
+          this.value = this.$browserStore.session()
         }
       }).$mount('#app')
     </script>
