@@ -18,8 +18,16 @@ jobs:
 
     steps:
       - checkout
-
-      - run: npm install
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
 
       # run tests!
       - run: npm run test:unit
+      - run: npm run test:coveralls

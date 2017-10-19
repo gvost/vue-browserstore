@@ -1,19 +1,18 @@
 import Vue from 'vue'
 
-describe('session', () => {
+describe('local', () => {
   let vm
 
   beforeEach(() => {
     vm = new Vue()
   })
 
-  describe('get session storage', () => {
+  describe('get local storage', () => {
     it('should not be undefined', done => {
       nextTick(() => {
-        const test = vm.$browserStore.session()
+        const test = vm.$browserStore.local()
         assert(test !== undefined, 'You should be implemented!!')
       }).then(done)
     })
   })
-  // describe('')
 })
