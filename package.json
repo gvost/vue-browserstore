@@ -1,7 +1,7 @@
 {
   "name": "vue-browserstore",
-  "description": "A Vue.js Plugin",
-  "version": "0.1.0",
+  "description": "(ß -- not finished) A very thin VueJS wrapper around local & session browser storage",
+  "version": "0.1.1",
   "author": {
     "name": "David Johnson",
     "email": "davidjohnson1297@gmail.com"

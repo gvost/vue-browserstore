@@ -1,11 +1,9 @@
 # vue-browserstore
 
-[![Coverage Status](https://coveralls.io/repos/github/gvost/vue-browserstore/badge.svg?branch=master)](https://coveralls.io/github/gvost/vue-browserstore?branch=master)
 
-[![npm](https://img.shields.io/npm/v/vue-browserstore.svg)](https://www.npmjs.com/package/vue-browserstore)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![Coverage Status](https://coveralls.io/repos/github/gvost/vue-browserstore/badge.svg?branch=master)](https://coveralls.io/github/gvost/vue-browserstore?branch=master) [![npm](https://img.shields.io/npm/v/vue-browserstore.svg)](https://www.npmjs.com/package/vue-browserstore)
 
-A Vue.js Plugin
+A very thin VueJS wrapper around local & session browser storage
 
 
 ## :book: Documentation
