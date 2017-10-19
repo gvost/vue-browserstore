@@ -8,14 +8,16 @@
   </head>
   <body>
     <div id="app">
-      <p>${ value }</p>
+      <p>{{ value }}</p>
     </div>
     <script>
+      window.localStorage.clear()
+      window.localStorage.setItem('foop', 'boar')
       var vm = new Vue({
-        delimiters: ['${', '}'],
-        data: { value: 0 },
+        delimiters: ['{{', '}}'],
+        data: { value: '' },
         mounted: function () {
-          this.value = this.$browserStore.getLocal()
+          this.value = this.$browserStore.getLocal('foop')
         }
       }).$mount('#app')
     </script>

@@ -9,10 +9,13 @@ describe('local', () => {
   })
 
   describe('get local storage', () => {
-    it('should not be undefined', done => {
+    it('object should exist', done => {
       nextTick(() => {
-        const result = vm.$browserStore.local()
-        assert(result !== undefined, 'You should be implemented!!')
+        function defined (x) {
+          return x !== undefined
+        }
+        window.localStorage.setItem('test', 'boo')
+        assert(defined(vm.$browserStore.local()), 'You should be implemented!!')
       }).then(done)
     })
   })

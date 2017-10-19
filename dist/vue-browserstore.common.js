@@ -28,6 +28,7 @@ VueBrowserstore.local = function local () {
   for (var key in window.localStorage) {
     currentState[key] = window.localStorage[key];
   }
+  this.browserState === undefined ? this.browserState = {} : this.browserState = this.browserState;
   this.browserState.localStore = currentState;
   return this.browserState.localStore
 };
@@ -36,6 +37,7 @@ VueBrowserstore.session = function session () {
   for (var key in window.sessionStorage) {
     currentState[key] = window.sessionStorage[key];
   }
+  this.browserState === undefined ? this.browserState = {} : this.browserState = this.browserState;
   this.browserState.sessionStore = currentState;
   return this.browserState.sessionStore
 };
@@ -75,6 +77,7 @@ VueBrowserstore.clearSession = function clearSession () {
 };
 
 VueBrowserstore.getBrowserState = function getBrowserState () {
+  this.browserState === undefined ? this.browserState = {} : this.browserState = this.browserState;
   return this.browserState
 };
 
