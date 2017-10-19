@@ -1,77 +1,80 @@
 // @flow
 
-// function install (Vue) {
-//   Vue.prototype.$browserStore = VueBrowserStore
-// }
-
 import { install } from './install'
 
-export default class VueBrowserStore {
+export default class VueBrowserstore<A, B> {
 
   static install: () => void;
   static version: string;
+  localStore: A
+  sessionStore: B
 
-  constructor (localStore, sessionStore) {
+  constructor (localStore: A, sessionStore: B) {
     this.localStore = localStore
     this.sessionStore = sessionStore
   }
-  static browserState = {}
-  static session (): Function {
-    let currentState = new Object({})
-    for (let key in window.sessionStorage) {
-      currentState[key] = window.sessionStorage[key]
-    }
-    this.browserState.sessionStore = currentState
-    return this.browserState.sessionStore
-  }
-  static local (): Function {
-    let currentState = new Object({})
-    for (let key in window.localStorage) {
+
+  static browserState: Object
+
+  static local (): Object {
+    const currentState = {}
+    for (var key in window.localStorage) {
       currentState[key] = window.localStorage[key]
     }
     this.browserState.localStore = currentState
     return this.browserState.localStore
   }
-  // static getBrowserState (): Function {
-  //   return this.browserState
-  // }
+  static session (): Object {
+    const currentState = {}
+    for (var key in window.sessionStorage) {
+      currentState[key] = window.sessionStorage[key]
+    }
+    this.browserState.sessionStore = currentState
+    return this.browserState.sessionStore
+  }
 
-  // static getLocal (key) {
-  //   return window.localStorage.getItem(key)
-  // }
-  // static removeLocal (key) {
-  //   window.localStorage.removeItem(key)
-  //   return true
-  // }
-  // static clearLocal () {
-  //   window.localStorage.clear()
-  //   return true
-  // }
-  // static setLocal (key, val) {
-  //   window.localStorage.setItem(key, val)
-  //   return true
-  // }
-  // static getSession (key) {
-  //   return window.sessionStorage.getItem(key)
-  // }
-  // static setSession (key, val) {
-  //   window.sessionStorage.setItem(key, val)
-  //   return true
-  // }
-  // static removeSession (key) {
-  //   window.sessionStorage.removeItem(key)
-  //   return true
-  // }
-  // static clearSession () {
-  //   window.sessionStorage.clear()
-  //   return true
-  // }
+  static setLocal (key: string, val: any): boolean {
+    window.localStorage.setItem(key, val)
+    return true
+  }
+  static setSession (key: string, val: any): boolean {
+    window.sessionStorage.setItem(key, val)
+    return true
+  }
+
+  static getLocal (key: string): String {
+    return window.localStorage.getItem(key)
+  }
+  static getSession (key: string): String {
+    return window.sessionStorage.getItem(key)
+  }
+
+  static removeLocal (key: string): boolean {
+    window.localStorage.removeItem(key)
+    return true
+  }
+  static removeSession (key: string): boolean {
+    window.sessionStorage.removeItem(key)
+    return true
+  }
+
+  static clearLocal (): boolean {
+    window.localStorage.clear()
+    return true
+  }
+  static clearSession (): boolean {
+    window.sessionStorage.clear()
+    return true
+  }
+
+  static getBrowserState (): Object {
+    return this.browserState
+  }
 }
-// VueRouter.install = install
-// VueRouter.version = '__VERSION__'
-VueBrowserStore.install = install
-VueBrowserStore.version = '0.1.0'
+
+VueBrowserstore.install = install
+VueBrowserstore.version = '0.1.0'
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueBrowserStore)
+  window.Vue.use(VueBrowserstore)
 }

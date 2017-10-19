@@ -17,3 +17,4 @@ jobs:
             - node_modules
       - run: npm run test:unit
       - run: npm run test:coveralls
+      - run: npm run build
