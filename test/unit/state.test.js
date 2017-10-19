@@ -13,7 +13,7 @@ describe('browser store state', () => {
       nextTick(() => {
         const control = { localStore: {}, sessionStore: {} }
         const result = vm.$browserStore.getBrowserState()
-        assert(typeof (control) === typeof (result), 'NOOOOOO!!!')
+        assert(typeof control === typeof result, 'NOOOOOO!!!')
       }).then(done)
     })
   })
