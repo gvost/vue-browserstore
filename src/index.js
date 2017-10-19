@@ -6,16 +6,15 @@ export default class VueBrowserstore<A, B> {
 
   static install: () => void;
   static version: string;
-  localStore: A;
-  sessionStore: B;
-
+  localStore: A
+  sessionStore: B
 
   constructor (localStore: A, sessionStore: B) {
     this.localStore = localStore
     this.sessionStore = sessionStore
   }
 
-  static browserState = {}
+  static browserState: Object
 
   static local (): Object {
     const currentState = {}
