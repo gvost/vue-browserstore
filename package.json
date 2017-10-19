@@ -1,6 +1,6 @@
 {
   "name": "vue-browserstore",
-  "description": "A very thin VueJS wrapper around local & session browser storage",
+  "description": "(ß -- not finished) A very thin VueJS wrapper around local & session browser storage",
   "version": "0.1.1",
   "author": {
     "name": "David Johnson",
