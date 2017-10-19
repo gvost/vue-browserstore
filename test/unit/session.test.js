@@ -11,8 +11,11 @@ describe('session', () => {
   describe('get session storage', () => {
     it('should not be undefined', done => {
       nextTick(() => {
-        const test = vm.$browserStore.session()
-        assert(test !== undefined, 'You should be implemented!!')
+        function defined (x) {
+          return x !== undefined
+        }
+        window.sessionStorage.setItem('test', 'boo')
+        assert(defined(vm.$browserStore.session()), 'You should be implemented!!')
       }).then(done)
     })
   })
