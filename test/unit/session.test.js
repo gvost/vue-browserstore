@@ -32,7 +32,7 @@ describe('session', () => {
         assert(vm.$browserStore.getSession('test') === 'boo', 'You broke it!!')
       }).then(done)
     })
-  }),
+  })
   describe('remove session entry', () => {
     it('should return true', done => {
       nextTick(() => {

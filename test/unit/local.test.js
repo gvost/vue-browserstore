@@ -32,7 +32,7 @@ describe('local', () => {
         assert(vm.$browserStore.getLocal('test') === 'boo', 'You broke it!!')
       }).then(done)
     })
-  }),
+  })
   describe('remove local entry', () => {
     it('should return true', done => {
       nextTick(() => {
