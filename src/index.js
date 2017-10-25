@@ -60,7 +60,6 @@ export default class VueBrowserstore<A, B> {
     window.sessionStorage.removeItem(key)
     return true
   }
-
   static clearLocal (): boolean {
     window.localStorage.clear()
     return true

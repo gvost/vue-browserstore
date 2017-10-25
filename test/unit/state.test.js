@@ -13,9 +13,6 @@ describe('browser store state', () => {
   describe('get browser storage state', () => {
     it('should match object type of control', done => {
       nextTick(() => {
-        // const control = { localStore: {}, sessionStore: {} }
-        // const result = vm.$browserStore.getBrowserState()
-        // assert(typeof(control) === typeof(result), 'NOOOOOO!!!')
         function defined (x) {
           return x !== undefined
         }
