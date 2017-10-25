@@ -1,5 +1,5 @@
 /*!
- * vue-browserstore v0.1.2 
+ * vue-browserstore v0.1.3 
  * (c) 2017 David Johnson
  * Released under the MIT License.
  */
@@ -52,6 +52,7 @@ VueBrowserstore.setSession = function setSession (key, val) {
 VueBrowserstore.getLocal = function getLocal (key) {
   return window.localStorage.getItem(key)
 };
+
 VueBrowserstore.getSession = function getSession (key) {
   return window.sessionStorage.getItem(key)
 };

@@ -47,6 +47,7 @@ export default class VueBrowserstore<A, B> {
   static getLocal (key: string): String {
     return window.localStorage.getItem(key)
   }
+
   static getSession (key: string): String {
     return window.sessionStorage.getItem(key)
   }
@@ -76,7 +77,7 @@ export default class VueBrowserstore<A, B> {
 }
 
 VueBrowserstore.install = install
-VueBrowserstore.version = '0.1.0'
+VueBrowserstore.version = '0.1.3'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(VueBrowserstore)
