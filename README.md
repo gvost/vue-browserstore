@@ -7,7 +7,8 @@ A very thin VueJS wrapper around local & session browser storage
 
 
 ## :book: Documentation
-See [here](http://gvost.github.io/vue-browserstore/)
+<!--See [here](http://gvost.github.io/vue-browserstore/)-->
+See [here](https://github.com/gvost/vue-browserstore/tree/master/docs)
 
 ## :scroll: Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/gvost/vue-browserstore/blob/dev/CHANGELOG.md).
