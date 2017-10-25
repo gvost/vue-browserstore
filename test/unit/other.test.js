@@ -1,8 +1,11 @@
 import Vue from 'vue'
+import VueBrowserstore from '../../src'
 
 describe('check for window.Vue fallback', () => {
   beforeEach(() => {
     window.Vue = new Vue()
+    window.localStorage.setItem('foo', 'baz')
+    window.sessionStorage.setItem('foo', 'baz')
   })
   describe('Vue attached to window not global vm', () => {
     it('should apply to alternate vue implementation', done => {
@@ -15,29 +18,30 @@ describe('check for window.Vue fallback', () => {
     })
   })
 })
-
 describe('check initialization of .localStore & .sessionStore', () => {
   let vm
   beforeEach(() => {
     vm = new Vue()
   })
   describe('sessionStore', () => {
-    it('should be defined', done => {
+    it('should exist with a value of undefined', done => {
       nextTick(() => {
         function defined (x) {
           return x !== undefined
         }
-        assert(defined(vm.$browserStore.browserState.sessionStore), 'Not working')
+        let vbs = new VueBrowserstore()
+        assert(!defined(vbs.sessionStore), 'Not working')
       }).then(done)
     })
   })
   describe('localStore', () => {
-    it('should be defined', done => {
+    it('should exist with a value of undefined', done => {
       nextTick(() => {
         function defined (x) {
           return x !== undefined
         }
-        assert(defined(vm.$browserStore.browserState.localStore), 'Not working')
+        let vbs = new VueBrowserstore()
+        assert(!defined(vbs.localStore), 'Not working')
       }).then(done)
     })
   })
